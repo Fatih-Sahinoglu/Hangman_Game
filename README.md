@@ -17,11 +17,12 @@ A structured, modular Hangman game built with C++. This project focuses on **Obj
 
 | File / Folder | Description |
 | :--- | :--- |
-| **`class/game.h`** | Core `Game` class managing player lives and game state. |
-| **`functions/play.h`** | Main gameplay loop and input handling. |
-| **`functions/words.h`** | Data structure containing the word library. |
-| **`include.h`** | Central header for all standard library dependencies. |
-| **`main.cpp`** | Application entry point. |
+| **`class/game.h`** | Core `Game` class managing player lives, game state, and constructor. |
+| **`functions/play.h`** | Main gameplay loop, input handling, and drawing the visual "Hangman". |
+| **`functions/words.h`** | Logic for selecting words and hints from the external file. |
+| **`words.txt`** | External database containing words and their corresponding hints. |
+| **`include.h`** | Central header for all standard library dependencies and class link. |
+| **`main.cpp`** | Application entry point and game initialization. |
 
 
 ## Rules
@@ -29,8 +30,9 @@ A structured, modular Hangman game built with C++. This project focuses on **Obj
 1. **Start:** Enter `1` to start, `0` to exit.
 2. **Guessing:** Enter letters to reveal the hidden word.
 3. **Risk It:** Enter `1` to guess the **whole word** at once.
-4. **Penalty:** Each wrong letter reduces your **HP**.
-5. **Outcome:** Game ends when HP reaches `0` (Loss) or the word is guessed (Win).
+4. **Get Help:** Enter `2` to use a **Hint** (costs 1 HP, but reveals the hint from the database).
+5. **Penalty:** Each wrong letter reduces your **HP**.
+6. **Outcome:** Game ends when HP reaches `0` (Loss) or the word is guessed (Win).
 
 
 ### Example Words

@@ -1,18 +1,23 @@
 class game{ 
 public:
 string word; //The word to be guessed
+string hint; //Hint for the word
+string re; // putting _ inside of re for showing how many letter knowing
 signed short int hp=8,round=0; //hp and number of rounds
 char wrong[8]={' ',' ',' ',' ',' ',' ',' ',' '}; //Because after 8 game will over
 char guess; //for getting letters
 
 void man(); //drawing man
 void words();
+void status();
 game(){
 
    cout<<"\n\n(for see and choose example words 0)\n";
    cout<<"Enter the word: ";
    getline(cin,word);
    if(word=="0") words();
+   cout<<"\nEnter a hint for the word: ";
+   getline(cin,hint);
     
 for(int i=0; i<word.length(); i++) //making all letters low
 {
@@ -33,8 +38,7 @@ for(int i=0; i<word.length(); i++){  //how many letter in word
 
 
 cout<<endl;
-
-string re= string(word.length(),'_'); // putting _ inside of re
+re = string(word.length(),'_');
 
 // if there is ' ' write now becase inputting this is not possible
 for(int i=0; i<word.length(); i++){ 
@@ -47,7 +51,7 @@ string control=re; //for controlling is re changed
 
   do{ //Run until 0 is entered or the game ends
 
-cout<<"\n\nChoose a letter\n(for guessing the word 1)\n";
+cout<<"\n\nChoose a letter\n(for guessing the word 1)\n(for hint 2)\n";
 cin>>guess;
 cin.ignore(numeric_limits<streamsize>::max(),'\n');
  //if there is letter more than 1 delete others and use just first one
@@ -67,8 +71,20 @@ if(guess=='1'){
         break;
     }
     else{hp--;
-    man();
+    status();
     }
+    continue;
+}
+else if(guess=='2'){
+    if(hp==1){ //not enough hp for hint
+        cout<<"\nYou don't have enough hp for hint\n";
+    }
+    else{
+    cout<<"\nHint: "<<hint<<endl;
+    hp--;
+    status();
+}
+continue;
 }
 
 else{
@@ -76,11 +92,8 @@ else{
 guess=tolower(guess);  
 for(int j=0; j<word.length(); j++){
 if(guess==word[j]) { //if there is ,put inside of re 
-re[j]=word[j];}
-else{
-if(re[j]!=word[j])
-  re[j]='_';
-}  
+re[j]=word[j];}  
+}
 }
 
 if(re==word){
@@ -89,10 +102,6 @@ if(re==word){
     break;
 }
 else{
-cout<<"\nNow : "; //showing how many letter knowing
-for(int k=0; k<word.length(); k++)
-cout<<re[k];
-cout<<endl;
 
 
 if(control==re){ //if it's wrong or entering same letter than ***
@@ -117,13 +126,7 @@ round++;  //and increase round number
 
  else control=re; //if it's not wrong and same change control ***
  
- man();
-cout<<endl;
-for(int i=0; i<=7; i++){ //write wrongs one by one
-    cout<<wrong[i]<<' ';
-}
-cout<<endl;
-}
+status();
 }
 }while(guess!='0');
 }

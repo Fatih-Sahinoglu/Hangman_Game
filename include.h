@@ -4,6 +4,8 @@ using namespace std;
 #include <limits> //numeric_limits for ignoring letters
 #include <cctype> //tolower
 #include <memory> //smart pointer
+#include <fstream> //file handling
+
 #include "class/game.h"
 #include "functions/play.h"
 #include "functions/words.h"

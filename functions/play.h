@@ -61,3 +61,20 @@ switch (hp) {
     break;
 }
 }
+
+void game::status(){
+
+    cout<<"\nNow : "; //showing how many letter knowing
+for(int i=0; i<word.length(); i++)
+cout<<re[i];
+cout<<endl;
+
+man();
+cout<<endl;
+
+for(int i=0; i<=7; i++){ //write wrongs one by one
+    cout<<wrong[i]<<' ';
+}
+cout<<endl;
+
+}

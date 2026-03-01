@@ -1,0 +1,28 @@
+New York,City
+San Francisco,City
+Tokyo,City
+Water bottle,Container
+Backpack,Container
+Electric guitar,Instrument
+Piano,Instrument
+Violin,Instrument
+elephant,Animal
+whale,Animal
+Giraffe,Animal
+Penguin,Animal
+Fried chicken,Food
+Pizza,Food
+Hamburger,Food
+Chocolate cake,Dessert
+Ice cream,Dessert
+Baklava,Dessert
+diamond sword,Weapon
+Golden apple,Item
+Harry Potter,Wizard
+Gandalf,Wizard
+Tony Stark,Hero
+Batman,Hero
+Spider Man,Hero
+Black hole,Space
+Solar system,Space
+Mars,Space

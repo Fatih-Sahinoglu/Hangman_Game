@@ -10,6 +10,7 @@ cout<<"\nTHE HANGMAN\n"
 <<"* You can guess letter or the whole word\n"
 <<"* You have 8 hp\n"
 <<"* Letters which is wrong or guessed before will decrease your hp\n"
+<<"* You can get hint but it will decrease your hp\n"
 <<"* Have Fun\n";
 
     do{
